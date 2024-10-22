@@ -14,6 +14,12 @@ export default defineEventHandler(async (event) => {
 })
 
 
+/**
+ * Generates a JWT token for Zoom Video SDK, given a session name and role type.
+ * @param {string} sessionName The name of the session.
+ * @param {number} role The role type for the JWT token.
+ * @returns {string} The JWT token.
+ */
 function generateSignature(sessionName: string, role: number) {
   const runtimeConfig = useRuntimeConfig();
   const sdkKey = runtimeConfig.ZoomVideoSDKKey;
@@ -25,7 +31,7 @@ function generateSignature(sessionName: string, role: number) {
   const exp = iat + 60 * 60 * 2;
   const oHeader = { alg: "HS256", typ: "JWT" };
   const oPayload = {
-    app_key: sdkKey, tpc: sessionName, role_type: role, version: 1, iat: iat, exp: exp,
+    app_key: sdkKey, tpc: sessionName, role_type: role, version: 3, iat: iat, exp: exp,
   };
   const sHeader = JSON.stringify(oHeader);
   const sPayload = JSON.stringify(oPayload);
