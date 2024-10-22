@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@types/jsrsasign": "^10.5.14",
-    "@zoom/videosdk": "^1.11.5",
+    "@zoom/videosdk": "^1.12.5",
     "jsrsasign": "^11.1.0",
     "nuxt": "^3.11.2",
     "vue": "^3.4.27",

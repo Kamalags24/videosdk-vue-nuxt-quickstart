@@ -1,5 +1,12 @@
 <script setup lang="ts">
 const sessionName = ref('');
+/**
+ * Navigate to a call page with the given session name
+ *
+ * @function create
+ * @param {string} sessionName
+ * @returns {Promise<void>}
+ */
 const create = async () => {
   const slug = sessionName.value
   if (slug)
